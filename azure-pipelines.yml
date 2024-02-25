@@ -17,8 +17,6 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      vmImage: ubuntu-latest
     steps:
     - task: Docker@2
       displayName: Build an image
@@ -26,4 +24,5 @@ stages:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Practica11/Dockerfile'
         tags: |
-          $(tag)
+          $(tag)"
+
